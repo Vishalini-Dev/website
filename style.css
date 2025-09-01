@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+
+
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    color: #333;
+    overflow-x: hidden;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid #e0e0e0;
+}
+
+header img {
+
+    height: 80px;
+    width: 110px;
+    object-fit: contain;
+    display: block;
+}
+
+
+header nav {
+    display: flex;
+    align-items: center;
+
+}
+
+header nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #28523b;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+
+
+header nav a:hover {
+    color: #000000;
+}
+
+.hero {
+    position: relative;
+    height: 600px;
+    background: url(images/home.jpg) no-repeat center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+    margin-bottom: 10px;
+}
+
+.hero p.subtitle {
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 50px;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.divider {
+    width: 100px;
+    height: 1px;
+    background: white;
+    margin: 20px auto;
+    opacity: 0.6;
+}
+
+/* Stats Section */
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-number {
+    background: #ffffff;
+    color: #28523b;
+     font-weight: 700;
+    font-size: 1.8rem;
+    padding: 10px 16px;
+    border-radius: 10px;
+    margin-bottom: 6px;
+    user-select: none;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    letter-spacing: 0.4px;
+}
