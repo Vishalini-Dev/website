@@ -1,13 +1,12 @@
+
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
-
-
 }
 
-html,
-body {
+html, body {
     width: 100%;
     height: 100%;
     background: #ffffff;
@@ -15,6 +14,7 @@ body {
     overflow-x: hidden;
 }
 
+/* =================== Header =================== */
 header {
     position: sticky;
     top: 0;
@@ -25,24 +25,32 @@ header {
     z-index: 1000;
     backdrop-filter: blur(8px);
     border-bottom: 1px solid #e0e0e0;
+    padding: 10px 30px;
 }
 
 header img {
-
     height: 80px;
     width: 110px;
     object-fit: contain;
     display: block;
 }
 
-
-header nav {
-    display: flex;
-    align-items: center;
-
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #28523b;
 }
 
-header nav a {
+/* Navigation Links */
+nav.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+nav.nav-links a {
     margin: 0 15px;
     text-decoration: none;
     color: #28523b;
@@ -51,12 +59,11 @@ header nav a {
     transition: color 0.3s ease;
 }
 
-
-
-header nav a:hover {
+nav.nav-links a:hover {
     color: #000000;
 }
 
+/* =================== Hero Section =================== */
 .hero {
     position: relative;
     height: 600px;
@@ -66,12 +73,12 @@ header nav a:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: white;
+    color: #fff;
     padding: 0 20px;
 }
 
 .hero h1 {
-    font-size: 2.4rem;
+    font-size: 2.1rem;
     font-weight: 700;
     letter-spacing: 1.2px;
     text-transform: uppercase;
@@ -94,7 +101,7 @@ header nav a:hover {
     opacity: 0.6;
 }
 
-/* Stats Section */
+/* =================== Stats Section =================== */
 .stats {
     display: flex;
     justify-content: center;
@@ -103,6 +110,8 @@ header nav a:hover {
     font-weight: 600;
     font-size: 1rem;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+    flex-wrap: wrap;
+    padding: 40px 20px;
 }
 
 .stat-item {
@@ -114,7 +123,7 @@ header nav a:hover {
 .stat-number {
     background: #ffffff;
     color: #28523b;
-     font-weight: 700;
+    font-weight: 700;
     font-size: 1.8rem;
     padding: 10px 16px;
     border-radius: 10px;
@@ -127,3 +136,139 @@ header nav a:hover {
     font-size: 0.9rem;
     letter-spacing: 0.4px;
 }
+
+/* =================== Responsive Design =================== */
+
+/* Tablets (≤1024px) */
+@media (max-width: 1024px) {
+    header {
+        flex-wrap: wrap;
+        padding: 10px 20px;
+    }
+
+    nav.nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 10px;
+    }
+
+    nav.nav-links a {
+        margin: 10px;
+    }
+
+    .hero {
+        height: 500px;
+        padding: 0 10px;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p.subtitle {
+        font-size: 1rem;
+    }
+
+    .stats {
+        gap: 40px;
+    }
+
+    .stat-number {
+        font-size: 1.5rem;
+    }
+
+    .stat-label {
+        font-size: 0.85rem;
+    }
+}
+
+/* Mobile (≤768px) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: row;
+        padding: 10px 20px;
+    }
+
+    header img {
+        height: 60px;
+        width: 90px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav.nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: white;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 999;
+        border-top: 1px solid #e0e0e0;
+    }
+
+    nav.nav-links.show {
+        display: flex;
+    }
+
+    nav.nav-links a {
+        padding: 12px;
+        text-align: center;
+        width: 100%;
+        border-bottom: 1px solid #ddd;
+        margin: 0;
+    }
+
+    .hero {
+        height: 450px;
+    }
+
+    .hero h1 {
+        font-size: 1.4rem;
+    }
+
+    .hero p.subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 30px;
+    }
+
+    .stats {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .stat-number {
+        font-size: 1.4rem;
+    }
+
+    .stat-label {
+        font-size: 0.85rem;
+    }
+}
+
+/* Extra Small Devices (≤480px) */
+@media (max-width: 480px) {
+    nav.nav-links a {
+        font-size: 14px;
+    }
+
+    .hero h1 {
+        font-size: 1.1rem;
+    }
+
+    .hero p.subtitle {
+        font-size: 0.9rem;
+    }
+
+    .stat-number {
+        font-size: 1.2rem;
+        padding: 6px 10px;
+    }
+
+    .stat-label {
+        font-size: 0.8rem;
+    }
